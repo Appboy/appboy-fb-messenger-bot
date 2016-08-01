@@ -1,0 +1,28 @@
+{
+  "name": "fb-messenger-bot",
+  "version": "1.0.0",
+  "description": "Demo for Facebook Messenger and Appboy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jussi Lundstedt",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "*",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "request": "^2.72.0",
+    "socket.io": "^1.4.6",
+    "uuid": "^2.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Appboy/appboy-fb-messenger-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Appboy/appboy-fb-messenger-bot/issues"
+  },
+  "homepage": "https://github.com/Appboy/appboy-fb-messenger-bot#readme"
+}

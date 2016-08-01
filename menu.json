@@ -1,0 +1,33 @@
+{
+    "products": [
+        {
+            "product_id":0,
+            "title":"Margherita Pizza",
+            "price":12,
+            "image_url":"http://i.imgur.com/VWPjlgm.jpg"
+        },
+        {
+            "product_id":1,
+            "title":"Pepperoni Pizza",
+            "price":15,
+            "image_url":"http://i.imgur.com/DBTzEkU.jpg"
+        }
+    ],
+    "extras": [
+        {
+            "extra_id":0,
+            "title":"Extra Cheese",
+            "price":0.50
+        },
+        {
+            "extra_id":1,
+            "title":"Extra Pepperoni",
+            "price":1
+        },
+        {
+            "extra_id":2,
+            "title":"Garlic",
+            "price":0
+        }
+    ]
+}

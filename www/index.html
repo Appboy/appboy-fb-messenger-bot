@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset-"utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="qk3XlpV-Uz9WmSUFVlKgljgUhOIaYjaOAHX_1HlfB2M" />
+    <title>MyZa - Imaginary Pizza in seconds!</title>
+
+    <!-- stylesheets for Google Fonts, our own design and Appboy -->
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link type="text/css" rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://js.appboycdn.com/web-sdk/1.4/appboy.min.css" />
+    
+    <!-- fetch dependencies (Appboy, jQuery, socket.io and our own utils.js library) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="/utils.js" async defer></script>
+</head>
+<body>
+    <h1 class="welcome-header">Hello! Welcome to MyZa!</h1>
+    <p class="welcome-text">MyZa allows you to order imaginary pizza right to your Messenger inbox. To use it, click on the "Send to Messenger" button and give us permission to send you a message. Then put your address in the form field below and you're good to go!</p>
+
+
+    <!-- Login field -->
+    <form class="generic-field" id="login-field" onSubmit="return false">
+        <h3>1. Registration</h3>
+        <table id="data-table">
+            <tr>
+                <td><input id="first-name" placeholder="First name" type="text"></input></td>
+                <td><input id="last-name" placeholder="Last name" type="text"></input></td>
+            </tr>
+            <tr>
+                <td><input id="email-address" placeholder="E-mail address" type="email" required="true"></input></input></td>
+                <td><input id="phone-number" placeholder="Phone number" type="tel"></input></td>
+            </tr>
+            <tr>
+                <td><input id="login-button" type="submit" onClick="setAppboyUser()" value="Identify"></input></td>
+                <td><!-- Messenger button -->
+                    <div 
+                      id="messenger-button"
+                      class="fb-send-to-messenger" 
+                      messenger_app_id="1117504028293532" 
+                      page_id="286373825047515"
+                      color="blue" 
+                      data-ref="APPBOY_AUTH"
+                      size="standard"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Order field -->
+    <div class="generic-field">
+        <h3>2. Select order</h3>
+        <div id="marg-properties">
+            <table id="marg">
+                <tr>
+                    <td>Margherita Pizza</td>
+                    <td>
+                        <select class="quantity" id="marg-quantity">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="marg-extra-cheese" value="0"></input>Extra Cheese</td>
+                    <td><input type="checkbox" id="marg-extra-pepperoni" value="1"></input>Extra Pepp</td>
+                    <td><input type="checkbox" id="marg-garlic" value="2"></input>Garlic</td>
+                </tr>
+            </table>
+        </div>
+        <div id="pepp-properties">
+            <table id="pepp">
+                <tr>
+                    <td>Pepperoni Pizza</td>
+                    <td>
+                        <select class="quantity" id="pepp-quantity">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="pepp-extra-cheese" value="0"></input>Extra Cheese</td>
+                    <td><input type="checkbox" id="pepp-extra-pepperoni" value="1"></input>Extra Pepp</td>
+                    <td><input type="checkbox" id="pepp-garlic" value="2"></input>Garlic</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // populate the pizza quantity selectors
+        for (var i = 0; i <= 10; i++) {
+            $( ".quantity" ).append( "<option value=\"" + i + "\">" + i + "</option>" );
+        }
+    </script>
+
+    <!-- address and delivery field -->
+    <div class="generic-field">
+        <h3>3. Delivery address</h3>
+        <p>Unfortunately we don't yet deliver this cheesy goodness to your doorstep :(</p>
+        <!-- Gmaps Location Field -->
+        <div id="location-field">
+          <input id="autocomplete" placeholder="Enter your address"
+                 onFocus="geolocate()" type="text"></input>
+        </div>
+        <button id="order-button" type="submit" onClick="dispatchOrder()" disabled="true">Order your imaginary pizza!</button>
+    </div>
+</body>
+</html>

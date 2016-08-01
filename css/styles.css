@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
+#map {
+  height: 100%;
+}
+
+h1.welcome-header {
+  font-family: Roboto;
+  font-size: 30pt;
+  margin: 15px; 
+}
+
+p {
+  font-family: Roboto;
+  font-size: 12pt;
+}
+
+p.welcome-text {
+  margin: 15px;
+}
+
+h3 {
+  margin-top: 5px;
+  padding-top: 5px;
+  font-family: Roboto;
+}
+
+#location-field {
+  position: relative;
+  margin-top: 20px;
+  height: 20px;
+  margin-bottom: 2px;
+}
+
+#autocomplete {
+  width: 90%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.generic-field {
+  display: table;
+  border-radius: 10px;
+  border: 2px solid #000;
+  padding: 5px; 
+  width: 300px;
+  margin: 15px;
+}
+
+#login-button {
+  vertical-align: top;
+}
+
+.fb_iframe_widget span {
+  width: 0 !important; /* forcibly override the FB Send to Messenger's inline style for width:256px; */
+}
